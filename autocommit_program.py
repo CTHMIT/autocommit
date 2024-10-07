@@ -5,8 +5,8 @@ from langchain_ollama.llms import OllamaLLM
 from dotenv import load_dotenv
 import sys
 
+# Load environment variables (if needed)
 load_dotenv()
-
 
 def generate_commit_message(llm: OllamaLLM, content: str) -> Optional[str]:
     """
@@ -58,7 +58,7 @@ def get_file_diff(repo_path: str, file_path: str) -> Optional[str]:
 
 
 def main(commit_message_file: str):
-    repo_path = os.getcwd()
+    repo_path = os.getcwd()  # Get the current working directory as the repo path
     model_name = "llama3.2"
     llm = OllamaLLM(model=model_name)
 
@@ -84,6 +84,9 @@ def main(commit_message_file: str):
     if not commit_message:
         print("Failed to generate commit message.")
         return
+
+    # Debugging output to show where the commit message will be written
+    print(f"Writing commit message to: {commit_message_file}")
 
     # Write the generated commit message to the commit message file.
     try:
