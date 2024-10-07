@@ -1,0 +1,22 @@
+[project]
+name = "autocommit"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "cthsu", email = "chuntsehsu@gmail.com"},
+]
+dependencies = [
+    "langchain-ollama>=0.2.0",
+    "dotenv>=0.0.5",
+    "pydantic>=2.9.2",
+    "GitPython>=3.1.43",
+    "argparse>=1.4.0",
+    "python-dotenv>=1.0.1",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
